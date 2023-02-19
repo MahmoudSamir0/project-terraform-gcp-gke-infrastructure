@@ -989,3 +989,14 @@ install kubetcl
 ```shell script
 sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 ```
+- connect to your cluster
+
+```shell script
+gcloud container clusters get-credentials <cluster name> --zone <zone> --project <project id>
+```
+you will get this massage 
+```
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for my-gke-cluster.
+```
+
