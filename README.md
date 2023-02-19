@@ -13,7 +13,7 @@ Before this module can be used on a project, you must ensure that the following 
 
 ### Software Dependencies
 #### Kubectl
-- [kubectl](https://github.com/kubernetes/kubernetes/releases) 1.9.x
+- [kubectl](https://github.com/kubernetes/kubernetes/releases](https://kubernetes.io/docs/tasks/tools/)
 
 #### Terraform and Plugins
 - [Terraform](https://www.terraform.io/downloads.html) 0.13+
@@ -981,6 +981,6 @@ answer `yes` to the confirmation prompt.
 ## you are now in your private machine
 
 install kubetcl 
-- [kubectl](https://github.com/kubernetes/kubernetes/releases) 1.9.x
+- [kubectl](https://github.com/kubernetes/kubernetes/releases](https://kubernetes.io/docs/tasks/tools/) 1.9.x
 
 
