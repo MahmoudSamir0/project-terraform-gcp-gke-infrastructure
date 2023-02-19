@@ -8,8 +8,7 @@
 Before this module can be used on a project, you must ensure that the following pre-requisites are fulfilled:
 
 1. Terraform and kubectl are [installed](#software-dependencies) on the machine where Terraform is executed.
-2. The Service Account you execute the module with has the right [permissions](#configure-a-service-account).
-3. The Compute Engine and Kubernetes Engine APIs are [active](#enable-apis) on the project you will launch the cluster in.
+2. The Compute Engine and Kubernetes Engine APIs are [active](#enable-apis) on the project you will launch the cluster in.
 
 ### Software Dependencies
 #### Kubectl
@@ -65,6 +64,13 @@ curl -fsSL "https://github.com/GoogleCloudPlatform/docker-credential-gcr/release
 
 gcloud auth configure-docker
 ```
+Configure Docker to use your Artifact Registry credentials when interacting with Artifact Registry (you are only required to do this once):
+
+  ```shell script
+
+docker-credential-gcr configure-docker --registries=HOSTNAME-LIST
+```
+Where HOSTNAME-LIST is a comma-separated list of repository hostnames to add to the credential helper configuration.
 
 
 ## to build your app and dockerize it 
@@ -1151,7 +1157,7 @@ kubernetes          ClusterIP      10.0.48.1    <none>          443/TCP        3
 
  
 
+##References
 
-
-
+1. for app https://github.com/atefhares/DevOps-Challenge-Demo-Code
 
