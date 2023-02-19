@@ -981,6 +981,11 @@ answer `yes` to the confirmation prompt.
 ## you are now in your private machine
 
 install kubetcl 
-- [kubectl](https://github.com/kubernetes/kubernetes/releases](https://kubernetes.io/docs/tasks/tools/) 1.9.x
+- [kubectl](https://kubernetes.io/docs/tasks/tools)
 
 
+- install google-cloud-sdk-gke-gcloud-auth-plugin 
+
+```shell script
+sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+```
