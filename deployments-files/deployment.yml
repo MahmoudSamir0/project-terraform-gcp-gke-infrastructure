@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: final-app
+
+  labels:
+
+    app: final-app
+    type: front-end
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: final-app
+      type: front-end
+
+
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: final-app
+        type: front-end
+
+
+    spec:
+
+      containers:
+
+      - name: final-app
+
+        image: gcr.io/iti-project-377209/final_app
+
+        ports:
+
+        - containerPort: 8000
+
+      - name: db-redis
+
+        image: redis
+
+        ports:
+
+        - containerPort: 6379
+
+
