@@ -1,4 +1,4 @@
 module "k8s" {
-  source = "./network"
+  source = "./cluster"
 
 }       
