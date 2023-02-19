@@ -75,12 +75,12 @@ docker-credential-gcr configure-docker --registries=HOSTNAME-LIST
 ## to build your app and dockerize it 
 - clone this repo 
  ```shell script
-git clone https://github.com/MahmoudSamir0/terraform-gcp-gke-infrastructure.git
+git clone https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure.git
 ```
 - enter the file of repo
 
 ```shell script
-  cd terraform-gcp-gke-infrastructure
+  cd project-terraform-gcp-gke-infrastructure
 ```
 - enter the file of app
 
