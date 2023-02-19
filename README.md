@@ -975,7 +975,12 @@ answer `yes` to the confirmation prompt.
 ## connect to your private instance using ssh
 
  ```shell script
- gcloud compute ssh --zone "<zone of your instance>" "<instance id>"  --project "<project id>"
+ gcloud compute ssh --zone "<zone of your instance>" "<instance id>" --tunnel-through-iap --project "<project id>"
 ```
+
+## you are now in your private machine
+
+install kubetcl 
+- [kubectl](https://github.com/kubernetes/kubernetes/releases) 1.9.x
 
 
