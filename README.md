@@ -13,7 +13,7 @@ Before this module can be used on a project, you must ensure that the following 
 
 ### Software Dependencies
 #### Kubectl
-- [kubectl](https://github.com/kubernetes/kubernetes/releases](https://kubernetes.io/docs/tasks/tools/)
+- [kubectl]([https://github.com/kubernetes/kubernetes/releases](https://kubernetes.io/docs/tasks/tools/))
 
 #### Terraform and Plugins
 - [Terraform](https://www.terraform.io/downloads.html) 0.13+
