@@ -1014,13 +1014,13 @@ gke-my-gke-cluster-my-task-node-pool-df43f273-zdp2   Ready    <none>   2m19s   v
 
 ```
 
-- now prepare your deployment files
+-  prepare your deployment files
 
 ```shell script
 vim deploy.yml
 
 ```
- copy this in your deploy file ** change project id ** 
+ copy this in your deploy file **change project id**
 ```
 apiVersion: apps/v1
 
@@ -1079,3 +1079,75 @@ spec:
         - containerPort: 6379
 
 ```
+
+- now prepare your service 
+
+
+```shell script
+vim ser.yml
+
+```
+copy this 
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: final-app-service
+  labels:
+    app: final-app
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8000
+  selector:
+    app: final-app
+    
+```
+
+## run your files
+
+
+```shell script
+kubectl apply -f deploy.yml
+```
+
+```shell script
+kubectl apply -f ser.yml 
+```
+
+**check your pods**
+
+```shell script
+kubectl get po
+```
+you will get this
+
+```
+NAME                         READY   STATUS    RESTARTS      AGE
+final-app-7b4dcb85d5-cnksp   2/2     Running   1 (12s ago)   16s
+final-app-7b4dcb85d5-d4dtf   2/2     Running   1 (13s ago)   16s
+final-app-7b4dcb85d5-qs6kh   2/2     Running   1 (13s ago)   16s
+```
+**check your service**
+
+```shell script
+kubectl get service
+```
+you will get this
+
+```
+NAME                TYPE           CLUSTER-IP   EXTERNAL-IP     PORT(S)        AGE
+final-app-service   LoadBalancer   10.0.52.5    35.236.35.182   80:31358/TCP   40s
+kubernetes          ClusterIP      10.0.48.1    <none>          443/TCP        3h15m
+```
+
+## now take the EXTERNAL-IP in browser
+
+                                                       ## congratulations
+
+
+
+
+
+
