@@ -1,7 +1,7 @@
 # project-terraform-gcp-gke-infrastructure
-![lab](https://github.com/MahmoudSamir0/terraform-gcp-gke-infrastructure/blob/master/screenshot/w.png)
+![lab](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/w.png)
 
-![final](https://github.com/MahmoudSamir0/terraform-gcp-gke-infrastructure/blob/master/screenshot/Screenshot%20from%202023-02-14%2010-00-21.png)
+![final](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/Screenshot%20from%202023-02-14%2010-00-21.png)
 
 ## Requirements
 
@@ -1142,10 +1142,14 @@ final-app-service   LoadBalancer   10.0.52.5    35.236.35.182   80:31358/TCP   4
 kubernetes          ClusterIP      10.0.48.1    <none>          443/TCP        3h15m
 ```
 
-## now take the EXTERNAL-IP in browser
+## now take the EXTERNAL-IP open it in browser
 
-                                                       ## congratulations
+# congratulations your app is ready 
 
+![final](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/web2.png)
+
+
+ 
 
 
 
