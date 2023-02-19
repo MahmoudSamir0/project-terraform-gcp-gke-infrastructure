@@ -989,14 +989,92 @@ install kubetcl
 ```shell script
 sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 ```
-- connect to your cluster
+### connect to your cluster
 
 ```shell script
 gcloud container clusters get-credentials <cluster name> --zone <zone> --project <project id>
 ```
 you will get this massage 
+
 ```
 Fetching cluster endpoint and auth data.
-kubeconfig entry generated for my-gke-cluster.
+kubeconfig entry generated for <cluster name>.
+```
+-  show number of node uou have 
+
+```shell script
+kubectl get node
+```
+you will get this
+
+```
+NAME                                                 STATUS   ROLES    AGE     VERSION
+gke-my-gke-cluster-my-task-node-pool-df43f273-zdp2   Ready    <none>   2m19s   v1.24.9-gke.2000
+
 ```
 
+- now prepare your deployment files
+
+```shell script
+vim deploy.yml
+
+```
+```
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: final-app
+
+  labels:
+
+    app: final-app
+    type: front-end
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: final-app
+      type: front-end
+
+
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: final-app
+        type: front-end
+
+
+    spec:
+
+      containers:
+
+      - name: final-app
+
+        image: gcr.io/iti-project-377209/final_app
+
+        ports:
+
+        - containerPort: 8000
+
+      - name: db-redis
+
+        image: redis
+
+        ports:
+
+        - containerPort: 6379
+
+
+```
