@@ -64,6 +64,11 @@ curl -fsSL "https://github.com/GoogleCloudPlatform/docker-credential-gcr/release
 
 gcloud auth configure-docker
 ```
+
+```shell script
+docker-credential-gcr configure-docker
+```
+
 Configure Docker to use your Artifact Registry credentials when interacting with Artifact Registry (you are only required to do this once):
 
   ```shell script
@@ -1156,8 +1161,4 @@ kubernetes          ClusterIP      10.0.48.1    <none>          443/TCP        3
 
 
  
-
-##References
-
-1. for app https://github.com/atefhares/DevOps-Challenge-Demo-Code
 
