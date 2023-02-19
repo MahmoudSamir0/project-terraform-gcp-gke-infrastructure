@@ -1,4 +1,4 @@
-# terraform-gcp-gke-infrastructure
+# project-terraform-gcp-gke-infrastructure
 ![lab](https://github.com/MahmoudSamir0/terraform-gcp-gke-infrastructure/blob/master/screenshot/w.png)
 
 ![final](https://github.com/MahmoudSamir0/terraform-gcp-gke-infrastructure/blob/master/screenshot/Screenshot%20from%202023-02-14%2010-00-21.png)
@@ -168,26 +168,11 @@ terraform apply
 - Terraform will prompt you to confirm the operation.
 
 ```raw
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
-
-  # module.k8s.google_compute_address.nat will be created
-  + resource "google_compute_address" "nat" {
-      + address            = (known after apply)
-      + address_type       = "EXTERNAL"
-      + creation_timestamp = (known after apply)
-      + id                 = (known after apply)
-      + name               = "myadressnat"
-      + network_tier       = "PREMIUM"
-      + project            = (known after apply)
-      + purpose            = (known after apply)
-      + region             = "us-west1"
-      + self_link          = (known after apply)
-      + subnetwork         = (known after apply)
-      + users              = (known after apply)
-    }
 
   # module.k8s.google_compute_firewall.final-egress will be created
   + resource "google_compute_firewall" "final-egress" {
@@ -400,24 +385,15 @@ Terraform will perform the following actions:
       + icmp_idle_timeout_sec               = 30
       + id                                  = (known after apply)
       + name                                = "mynat"
-      + nat_ip_allocate_option              = "MANUAL_ONLY"
-      + nat_ips                             = (known after apply)
+      + nat_ip_allocate_option              = "AUTO_ONLY"
       + project                             = (known after apply)
       + region                              = "us-west1"
       + router                              = "my-router"
-      + source_subnetwork_ip_ranges_to_nat  = "LIST_OF_SUBNETWORKS"
+      + source_subnetwork_ip_ranges_to_nat  = "ALL_SUBNETWORKS_ALL_IP_RANGES"
       + tcp_established_idle_timeout_sec    = 1200
       + tcp_time_wait_timeout_sec           = 120
       + tcp_transitory_idle_timeout_sec     = 30
       + udp_idle_timeout_sec                = 30
-
-      + subnetwork {
-          + name                     = (known after apply)
-          + secondary_ip_range_names = []
-          + source_ip_ranges_to_nat  = [
-              + "ALL_IP_RANGES",
-            ]
-        }
     }
 
   # module.k8s.google_compute_subnetwork.management_subnet will be created
@@ -486,7 +462,7 @@ Terraform will perform the following actions:
       + id                          = (known after apply)
       + initial_node_count          = 1
       + label_fingerprint           = (known after apply)
-      + location                    = "us-west2"
+      + location                    = "us-west2-a"
       + logging_service             = (known after apply)
       + master_version              = (known after apply)
       + monitoring_service          = (known after apply)
@@ -535,7 +511,7 @@ Terraform will perform the following actions:
             }
 
           + http_load_balancing {
-              + disabled = false
+              + disabled = (known after apply)
             }
 
           + network_policy_config {
@@ -633,7 +609,7 @@ Terraform will perform the following actions:
         }
 
       + master_authorized_networks_config {
-          + gcp_public_cidrs_access_enabled = false
+          + gcp_public_cidrs_access_enabled = (known after apply)
 
           + cidr_blocks {
               + cidr_block   = "10.0.8.0/24"
@@ -651,6 +627,10 @@ Terraform will perform the following actions:
           + managed_prometheus {
               + enabled = (known after apply)
             }
+        }
+
+      + network_policy {
+          + enabled = true
         }
 
       + node_config {
@@ -841,12 +821,12 @@ Terraform will perform the following actions:
           + public_endpoint         = (known after apply)
 
           + master_global_access_config {
-              + enabled = (known after apply)
+              + enabled = true
             }
         }
 
       + release_channel {
-          + channel = "STABLE"
+          + channel = (known after apply)
         }
 
       + service_external_ips_config {
@@ -854,7 +834,7 @@ Terraform will perform the following actions:
         }
 
       + vertical_pod_autoscaling {
-          + enabled = false
+          + enabled = (known after apply)
         }
 
       + workload_identity_config {
@@ -868,10 +848,10 @@ Terraform will perform the following actions:
       + id                          = (known after apply)
       + initial_node_count          = (known after apply)
       + instance_group_urls         = (known after apply)
-      + location                    = "us-west2"
+      + location                    = "us-west2-a"
       + managed_instance_group_urls = (known after apply)
-      + max_pods_per_node           = 100
-      + name                        = "my--task-node-pool"
+      + max_pods_per_node           = (known after apply)
+      + name                        = "my-task-node-pool"
       + name_prefix                 = (known after apply)
       + node_count                  = 1
       + node_locations              = (known after apply)
@@ -879,15 +859,9 @@ Terraform will perform the following actions:
       + project                     = (known after apply)
       + version                     = (known after apply)
 
-      + autoscaling {
-          + location_policy = (known after apply)
-          + max_node_count  = 2
-          + min_node_count  = 1
-        }
-
       + management {
-          + auto_repair  = true
-          + auto_upgrade = true
+          + auto_repair  = (known after apply)
+          + auto_upgrade = (known after apply)
         }
 
       + network_config {
@@ -898,35 +872,23 @@ Terraform will perform the following actions:
         }
 
       + node_config {
-          + disk_size_gb      = 10
+          + disk_size_gb      = (known after apply)
           + disk_type         = (known after apply)
           + guest_accelerator = (known after apply)
-          + image_type        = "COS_CONTAINERD"
+          + image_type        = (known after apply)
           + labels            = (known after apply)
           + local_ssd_count   = (known after apply)
           + logging_variant   = "DEFAULT"
-          + machine_type      = "e2-small"
+          + machine_type      = "e2-medium"
           + metadata          = (known after apply)
           + min_cpu_platform  = (known after apply)
           + oauth_scopes      = [
-              + "https://www.googleapis.com/auth/devstorage.read_only",
-              + "https://www.googleapis.com/auth/logging.write",
-              + "https://www.googleapis.com/auth/monitoring",
-              + "https://www.googleapis.com/auth/service.management.readonly",
-              + "https://www.googleapis.com/auth/servicecontrol",
-              + "https://www.googleapis.com/auth/trace.append",
+              + "https://www.googleapis.com/auth/cloud-platform",
             ]
-          + preemptible       = false
+          + preemptible       = true
           + service_account   = (known after apply)
           + spot              = false
-          + tags              = [
-              + "restricted1subnet1gke",
-            ]
           + taint             = (known after apply)
-
-          + gcfs_config {
-              + enabled = true
-            }
 
           + shielded_instance_config {
               + enable_integrity_monitoring = (known after apply)
@@ -939,9 +901,9 @@ Terraform will perform the following actions:
         }
 
       + upgrade_settings {
-          + max_surge       = 1
-          + max_unavailable = 0
-          + strategy        = "SURGE"
+          + max_surge       = (known after apply)
+          + max_unavailable = (known after apply)
+          + strategy        = (known after apply)
 
           + blue_green_settings {
               + node_pool_soak_duration = (known after apply)
@@ -953,6 +915,24 @@ Terraform will perform the following actions:
                 }
             }
         }
+    }
+
+  # module.k8s.google_project_iam_member.compute_service will be created
+  + resource "google_project_iam_member" "compute_service" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = (known after apply)
+      + role    = "roles/container.admin"
+    }
+
+  # module.k8s.google_project_iam_member.role_gke will be created
+  + resource "google_project_iam_member" "role_gke" {
+      + etag    = (known after apply)
+      + id      = (known after apply)
+      + member  = (known after apply)
+      + project = (known after apply)
+      + role    = "roles/storage.objectViewer"
     }
 
   # module.k8s.google_service_account.default will be created
@@ -981,13 +961,12 @@ Terraform will perform the following actions:
       + unique_id    = (known after apply)
     }
 
-Plan: 15 to add, 0 to change, 0 to destroy.
+Plan: 16 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.
 
-  Enter a value: 
 ```
 answer `yes` to the confirmation prompt.
 
