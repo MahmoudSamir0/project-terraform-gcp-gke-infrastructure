@@ -68,16 +68,10 @@ gcloud auth configure-docker
 ```shell script
 docker-credential-gcr configure-docker
 ```
-
-Configure Docker to use your Artifact Registry credentials when interacting with Artifact Registry (you are only required to do this once):
-
   ```shell script
 
 docker-credential-gcr configure-docker --registries=HOSTNAME-LIST
 ```
-Where HOSTNAME-LIST is a comma-separated list of repository hostnames to add to the credential helper configuration.
-
-
 ## to build your app and dockerize it 
 - clone this repo 
  ```shell script
