@@ -996,9 +996,10 @@ gcloud container clusters get-credentials <cluster name> --zone <zone> --project
 ```
 you will get this massage 
 
-
+```
 Fetching cluster endpoint and auth data.
 kubeconfig entry generated for <cluster name>.
+```
 
 -  show number of node uou have 
 
@@ -1006,11 +1007,12 @@ kubeconfig entry generated for <cluster name>.
 kubectl get node
 ```
 you will get this
-
+ 
+```
 NAME                                                 STATUS   ROLES    AGE     VERSION
 gke-my-gke-cluster-my-task-node-pool-df43f273-zdp2   Ready    <none>   2m19s   v1.24.9-gke.2000
 
-
+```
 
 - now prepare your deployment files
 
@@ -1018,7 +1020,7 @@ gke-my-gke-cluster-my-task-node-pool-df43f273-zdp2   Ready    <none>   2m19s   v
 vim deploy.yml
 
 ```
- copy this in your deploy file **change project id ** 
+ copy this in your deploy file ** change project id ** 
 ```
 apiVersion: apps/v1
 
