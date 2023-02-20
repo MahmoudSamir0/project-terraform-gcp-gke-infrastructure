@@ -83,12 +83,6 @@ gcloud auth configure-docker
 ```shell script
 docker-credential-gcr configure-docker
 ```
- **copy this command**
-
-  ```shell script
-
-docker-credential-gcr configure-docker --registries=HOSTNAME-LIST
-```
 ## to build your app and dockerize it 
 - clone this repo 
  (copy this command)
@@ -114,7 +108,7 @@ git clone https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastruct
 
 - build the app
 
- **copy this command**
+ **copy this command change project id**
 
 ```shell script
 docker build -t gcr.io/<project-id>/final_app .
@@ -127,7 +121,7 @@ docker image ls
 
 - push it to your container repo in gcp
 
- **copy this command**
+ **copy this command change project id**
   
 ```shell script
 docker push gcr.io/<project-id>/final_app
@@ -1039,7 +1033,7 @@ sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 ```
 ### connect to your cluster
 
- **copy this command before that modify the require in <> **
+ **copy this command before that modify the require in <>**
 
 
 ```shell script
@@ -1143,7 +1137,7 @@ spec:
 vim ser.yml
 
 ```
-**copy this **
+**copy this**
 ```
 apiVersion: v1
 kind: Service
