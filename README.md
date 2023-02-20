@@ -1006,7 +1006,7 @@ Fetching cluster endpoint and auth data.
 kubeconfig entry generated for <cluster name>.
 ```
 
--  show number of node uou have 
+-  show number of node you have 
 
 ```shell script
 kubectl get node
