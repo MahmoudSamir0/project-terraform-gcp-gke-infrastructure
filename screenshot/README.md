@@ -60,12 +60,6 @@
 ## web app
 
 **web**
-
-![web](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/web2.png)
-
-![web1](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/web3.png)
-
-
 ![web21](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/website.png)
 
 
