@@ -1011,7 +1011,7 @@ answer `yes` to the confirmation prompt.
 
 ## connect to your private instance using ssh
 
- **copy this command before that modify the require in <> **
+ **copy this command before that modify the require in <>**
 
 
  ```shell script
