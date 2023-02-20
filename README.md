@@ -34,13 +34,19 @@ Before this module can be used on a project, you must ensure that the following 
 ## Before you do anything 
 
  run following commands in your local machine:
-
+ 
+ (copy this command)
+ 
 ```shell script
 sudo apt update
 ```
+
 ## Configure Docker & gcloud to work with GCR of your project
 1. run following command  to login in your cli 
 - login to your  account in (google cloud platform)
+
+ (copy this command)
+
   ```shell script
   gcloud auth login
   ```
@@ -48,10 +54,14 @@ sudo apt update
 - [docker](https://docs.docker.com/engine/install/)
 
 3.  to use docker without sudo 
+
+  (copy this command)
+  
   ```shell script
  sudo usermod -a -G docker ${USER}
 ```
-4.
+4.  (copy this command)
+
   ```shell script
  VERSION=2.1.5
 OS=linux  # or "darwin" for OSX, "windows" for Windows.
@@ -61,29 +71,41 @@ curl -fsSL "https://github.com/GoogleCloudPlatform/docker-credential-gcr/release
 | tar xz docker-credential-gcr \
 && chmod +x docker-credential-gcr && sudo mv docker-credential-gcr /usr/bin/
 ```
+ (copy this command)
+
   ```shell script
 
 gcloud auth configure-docker
 ```
+ (copy this command)
 
 ```shell script
 docker-credential-gcr configure-docker
 ```
+ (copy this command)
+
   ```shell script
 
 docker-credential-gcr configure-docker --registries=HOSTNAME-LIST
 ```
 ## to build your app and dockerize it 
 - clone this repo 
+ (copy this command)
+
  ```shell script
 git clone https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure.git
 ```
 - enter the file of repo
 
+ (copy this command)
+
 ```shell script
   cd project-terraform-gcp-gke-infrastructure
 ```
+
 - enter the file of app
+
+ (copy this command)
 
 ```shell script
   cd dockerized_app
@@ -91,17 +113,29 @@ git clone https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastruct
 
 - build the app
 
+ (copy this command)
+
 ```shell script
 docker build -t gcr.io/<project-id>/final_app .
 ```
+ (copy this command)
+
 ```shell script
 docker image ls
 ```
+
 - push it to your container repo in gcp
+
+-  (copy this command)
+  
 ```shell script
 docker push gcr.io/<project-id>/final_app
 ```
+
 - back to your main file 
+
+ (copy this command)
+
 ```shell script
 cd ..
 ```
@@ -114,6 +148,9 @@ cd ..
 You can verify that terraform is  installed in your local ,machine
 this by running `terraform version`.
 
+ (copy this command)
+
+
 ```shell script
 terraform version
 ```
@@ -124,6 +161,9 @@ from version control — you need to initialize the directory with `terraform
 init`. This step downloads the providers defined in the configuration.
 
 Initialize the directory.
+
+ (copy this command)
+
 
 ```shell script
 terraform init
@@ -974,6 +1014,9 @@ answer `yes` to the confirmation prompt.
 
 ## connect to your private instance using ssh
 
+ (copy this command before that modify the require in <> )
+
+
  ```shell script
  gcloud compute ssh --zone "<zone of your instance>" "<instance id>" --tunnel-through-iap --project "<project id>"
 ```
@@ -986,10 +1029,15 @@ install kubetcl
 
 - install google-cloud-sdk-gke-gcloud-auth-plugin 
 
+(copy this command)
+
 ```shell script
 sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 ```
 ### connect to your cluster
+
+ **copy this command before that modify the require in <> **
+
 
 ```shell script
 gcloud container clusters get-credentials <cluster name> --zone <zone> --project <project id>
@@ -1003,6 +1051,8 @@ kubeconfig entry generated for <cluster name>.
 
 -  show number of node you have 
 
+(copy this command)
+
 ```shell script
 kubectl get node
 ```
@@ -1015,6 +1065,9 @@ gke-my-gke-cluster-my-task-node-pool-df43f273-zdp2   Ready    <none>   2m19s   v
 ```
 
 -  prepare your deployment files
+
+**copy this command**
+
 
 ```shell script
 vim deploy.yml
@@ -1087,7 +1140,7 @@ spec:
 vim ser.yml
 
 ```
-copy this 
+**copy this **
 ```
 apiVersion: v1
 kind: Service
@@ -1107,16 +1160,22 @@ spec:
 
 ## run your files
 
+**copy this command**
 
 ```shell script
 kubectl apply -f deploy.yml
 ```
+**copy this command**
+
 
 ```shell script
 kubectl apply -f ser.yml 
 ```
 
 **check your pods**
+
+**copy this command**
+
 
 ```shell script
 kubectl get po
@@ -1130,6 +1189,7 @@ final-app-7b4dcb85d5-d4dtf   2/2     Running   1 (13s ago)   16s
 final-app-7b4dcb85d5-qs6kh   2/2     Running   1 (13s ago)   16s
 ```
 **check your service**
+**copy this command**
 
 ```shell script
 kubectl get service
