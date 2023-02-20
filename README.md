@@ -202,6 +202,8 @@ providers used in your configuration
 
 ### Apply Configuration
 
+ **copy this command**
+
 ```shell script
 terraform apply 
 ```
