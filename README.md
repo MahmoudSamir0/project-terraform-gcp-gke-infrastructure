@@ -31,7 +31,7 @@ Before this module can be used on a project, you must ensure that the following 
 [terraform-0.13-upgrade]: https://www.terraform.io/upgrade-guides/0-13.html
 
 
-## Before you do anything in this module
+## Before you do anything 
 
  run following commands in your local machine:
 
@@ -40,6 +40,7 @@ sudo apt update
 ```
 ## Configure Docker & gcloud to work with GCR of your project
 1. run following command  to login in your cli 
+- login to your  account in (google cloud platform)
   ```shell script
   gcloud auth login
   ```
@@ -110,18 +111,12 @@ cd ..
 
 ### Terraform
 
-Terraform is already installed in your Cloud Shell environment. You can verify
+You can verify that terraform is  installed in your local ,machine
 this by running `terraform version`.
 
 ```shell script
 terraform version
 ```
-
-**Note:** When you run `terraform version`, Terraform may print a warning that
-  there is a newer version of Terraform available. This tutorial has been tested
-  with the version of Terraform installed in your Cloud Shell environment, so
-  you can continue to use it for the rest of the tutorial.
-  
   ### Initialize the directory
 
 When you create a new configuration — or check out an existing configuration
@@ -1147,7 +1142,7 @@ final-app-service   LoadBalancer   10.0.52.5    35.236.35.182   80:31358/TCP   4
 kubernetes          ClusterIP      10.0.48.1    <none>          443/TCP        3h15m
 ```
 
-## now take the EXTERNAL-IP open it in browser
+## now take the (EXTERNAL-IP) open it in browser
 
 # congratulations your app is ready 
 
