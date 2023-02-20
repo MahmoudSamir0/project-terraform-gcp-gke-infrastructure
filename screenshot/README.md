@@ -33,6 +33,11 @@
 
 ![virtual-instance](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/vm-instance.png)
 
+**build image**
+![image](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/push_docker/Screenshot%20from%202023-02-17%2020-28-45.png)
+
+**push image**
+![image](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/push_docker/Screenshot%20from%202023-02-17%2020-30-09.png)
 ## pod&node
 
 **node**
