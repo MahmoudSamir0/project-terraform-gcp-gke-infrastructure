@@ -1,7 +1,20 @@
 # project-terraform-gcp-gke-infrastructure
 ![gk](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/gk.jpg)
+##overview
+1 VPC
+2 subnets (management subnet & restricted subnet):
+    1. Management subnet has the following:
+        NAT gateway
+        Private VM
+   2. Restricted subnet has the following:
+        Private standard GKE cluster (private control plan)
 
-![final](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/Screenshot%20from%202023-02-14%2010-00-21.png)
+Notes:
+1. Restricted subnet must not have access to internet
+2. All images deployed on GKE must come from GCR or Artifacts registry.
+3. The VM must be private.
+4. Deployment must be exposed to public internet with a public HTTP load balancer.
+5. Only the management subnet can connect to the gke cluster.
 
 ## Requirements
 
