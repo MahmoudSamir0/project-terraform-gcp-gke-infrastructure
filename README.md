@@ -1,8 +1,8 @@
 # project-terraform-gcp-gke-infrastructure
 ![gk](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/gk.jpg)
 ## overview
-1 VPC
-2 subnets (management subnet & restricted subnet):
+ 1. (1VPC)
+ 2. 2subnets (management subnet & restricted subnet):
     1. Management subnet has the following:
         NAT gateway
         Private VM
