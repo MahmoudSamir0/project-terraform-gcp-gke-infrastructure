@@ -4,10 +4,10 @@
  1. (1VPC)
  2. 2subnets (management subnet & restricted subnet):
     1. Management subnet has the following:
-        NAT gateway
-        Private VM
+        1. NAT gateway
+        2. Private VM
    2. Restricted subnet has the following:
-        Private standard GKE cluster (private control plan)
+        1. Private standard GKE cluster (private control plan)
 
 Notes:
 1. Restricted subnet must not have access to internet
