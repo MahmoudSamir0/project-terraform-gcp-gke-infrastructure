@@ -1,8 +1,6 @@
 # project-terraform-gcp-gke-infrastructure
 ![gk](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/gk.jpg)
 
-![lab](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/w.png)
-
 ![final](https://github.com/MahmoudSamir0/project-terraform-gcp-gke-infrastructure/blob/master/screenshot/Screenshot%20from%202023-02-14%2010-00-21.png)
 
 ## Requirements
