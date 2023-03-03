@@ -6,7 +6,7 @@
     1. Management subnet has the following:
         1. NAT gateway
         2. Private VM
-   2. Restricted subnet has the following:
+    2. Restricted subnet has the following:
         1. Private standard GKE cluster (private control plan)
 
 Notes:
